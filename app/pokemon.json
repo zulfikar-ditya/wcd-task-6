@@ -1,0 +1,124 @@
+{
+	"data": [
+		{
+			"id": 1000,
+			"name": "Bulbasaur",
+			"type": ["Grass", "Poison"],
+			"image": "https://img.pokemondb.net/artwork/bulbasaur.jpg",
+			"stats": {
+				"health": 144,
+				"maxHealth": 1000,
+				"attack": 32,
+				"defense": 50
+			}
+		},
+		{
+			"id": 1001,
+			"name": "Kabuto",
+			"type": ["Rock", "Water"],
+			"image": "https://img.pokemondb.net/artwork/kabuto.jpg",
+			"stats": {
+				"health": 90,
+				"maxHealth": 1000,
+				"attack": 45,
+				"defense": 55
+			}
+		},
+		{
+			"id": 1002,
+			"name": "Oddish",
+			"type": ["Grass", "Poison"],
+			"image": "https://img.pokemondb.net/artwork/oddish.jpg",
+			"stats": {
+				"health": 120,
+				"maxHealth": 1000,
+				"attack": 30,
+				"defense": 40
+			}
+		},
+		{
+			"id": 1003,
+			"name": "Charizard",
+			"type": ["Fire", "Flying"],
+			"image": "https://img.pokemondb.net/artwork/charizard.jpg",
+			"stats": {
+				"health": 156,
+				"maxHealth": 1000,
+				"attack": 84,
+				"defense": 45
+			}
+		},
+		{
+			"id": 1004,
+			"name": "Pikachu",
+			"type": ["Electric"],
+			"image": "https://img.pokemondb.net/artwork/pikachu.jpg",
+			"stats": {
+				"health": 110,
+				"maxHealth": 1000,
+				"attack": 55,
+				"defense": 40
+			}
+		},
+		{
+			"id": 1005,
+			"name": "Gengar",
+			"type": ["Ghost", "Poison"],
+			"image": "https://img.pokemondb.net/artwork/gengar.jpg",
+			"stats": {
+				"health": 120,
+				"maxHealth": 1000,
+				"attack": 65,
+				"defense": 30
+			}
+		},
+		{
+			"id": 1006,
+			"name": "Lapras",
+			"type": ["Water", "Ice"],
+			"image": "https://img.pokemondb.net/artwork/lapras.jpg",
+			"stats": {
+				"health": 190,
+				"maxHealth": 1000,
+				"attack": 40,
+				"defense": 60
+			}
+		},
+		{
+			"id": 1007,
+			"name": "Mewtwo",
+			"type": ["Psychic"],
+			"image": "https://img.pokemondb.net/artwork/mewtwo.jpg",
+			"stats": {
+				"health": 160,
+				"maxHealth": 1000,
+				"attack": 95,
+				"defense": 55
+			}
+		},
+		{
+			"id": 1008,
+			"name": "Snorlax",
+			"type": ["Normal"],
+			"image": "https://img.pokemondb.net/artwork/snorlax.jpg",
+			"stats": {
+				"health": 220,
+				"maxHealth": 1000,
+				"attack": 50,
+				"defense": 65
+			}
+		},
+		{
+			"id": 1009,
+			"name": "Dragonite",
+			"type": ["Dragon", "Flying"],
+			"image": "https://img.pokemondb.net/artwork/dragonite.jpg",
+			"stats": {
+				"health": 170,
+				"maxHealth": 1000,
+				"attack": 75,
+				"defense": 60
+			}
+		}
+	]
+}
