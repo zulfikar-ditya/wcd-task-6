@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import pokemonData from "../pokemon.json";
+import Image from "next/image";
 
 interface PokemonStats {
 	health: number;
@@ -47,20 +48,24 @@ export default function PokemonDetailPage() {
 
 			{/* Pokemon Image */}
 			<div className="bg-transparent rounded-lg p-6 flex justify-center mb-6">
-				<img
+				<Image
 					src={pokemon.image}
 					alt={pokemon.name}
 					className="h-64 w-64 object-contain"
+					width={256}
+					height={256}
 				/>
 			</div>
 
 			{/* Pokemon Name and Small Image */}
 			<div className="flex justify-between items-center bg-transparent rounded-lg p-4 mb-6">
 				<h1 className="text-3xl font-bold text-gray-200">{pokemon.name}</h1>
-				<img
+				<Image
 					src={pokemon.image}
 					alt={pokemon.name}
 					className="h-12 w-12 object-contain"
+					width={48}
+					height={48}
 				/>
 			</div>
 

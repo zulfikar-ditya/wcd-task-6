@@ -1,6 +1,7 @@
 import React from "react";
 import pokemonData from "../pokemon.json";
 import Link from "next/link";
+import Image from "next/image";
 
 interface PokemonStats {
 	health: number;
@@ -27,10 +28,12 @@ export default function TwoGrid() {
 					<Link href={`/${pokemon.id}`} key={pokemon.id}>
 						<div className="bg-white rounded-lg shadow-md p-3 transition-transform hover:scale-105 cursor-pointer">
 							<div className="flex justify-center">
-								<img
+								<Image
 									src={pokemon.image}
 									alt={pokemon.name}
 									className="h-32 w-32 object-contain"
+									width={128}
+									height={128}
 								/>
 							</div>
 							<h2 className="text-center font-semibold mt-2 text-gray-800">

@@ -1,6 +1,7 @@
 import React from "react";
 import pokemonData from "../pokemon.json";
 import Link from "next/link";
+import Image from "next/image";
 
 interface PokemonStats {
 	health: number;
@@ -41,10 +42,12 @@ export default function OneGrid() {
 							</div>
 
 							<div className="flex justify-center">
-								<img
+								<Image
 									src={pokemon.image}
 									alt={pokemon.name}
 									className="h-48 w-48 object-contain"
+									width={192}
+									height={192}
 								/>
 							</div>
 

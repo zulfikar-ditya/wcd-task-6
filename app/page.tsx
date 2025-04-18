@@ -6,7 +6,6 @@ import OneGrid from "./PokemonCards/OneGrid";
 
 export default function Home() {
 	const [isGridView, setIsGridView] = useState<boolean>(false);
-	const [OrderBy, setOrderBy] = useState<string | null>(null);
 
 	useEffect(() => {
 		localStorage.setItem("isGridView", JSON.stringify(isGridView));
@@ -22,10 +21,7 @@ export default function Home() {
 	return (
 		<main className="py-3">
 			<div className="flex justify-between items-center ">
-				<select
-					onChange={(e) => setOrderBy(e.target.value)}
-					className="bg-background-2 text-secondary border border-secondary rounded-md p-2 w-full"
-				>
+				<select className="bg-background-2 text-secondary border border-secondary rounded-md p-2 w-full">
 					<option value="">Sort By</option>
 					<option value="name">Name</option>
 					<option value="date">Date</option>
