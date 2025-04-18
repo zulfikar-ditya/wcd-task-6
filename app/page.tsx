@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setOrderBy } from "./redux/pokemonSlice";
+import { RootState } from "./redux/store";
 import TwoGrid from "./PokemonCards/TwoGrid";
 import OneGrid from "./PokemonCards/OneGrid";
 
 export default function Home() {
 	const [isGridView, setIsGridView] = useState<boolean>(false);
+	const dispatch = useDispatch();
+	const { orderBy } = useSelector((state: RootState) => state.pokemon);
 
 	useEffect(() => {
 		localStorage.setItem("isGridView", JSON.stringify(isGridView));
@@ -18,14 +23,23 @@ export default function Home() {
 		}
 	}, []);
 
+	const handleOrderByChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		dispatch(setOrderBy(e.target.value));
+	};
+
 	return (
 		<main className="py-3">
-			<div className="flex justify-between items-center ">
-				<select className="bg-background-2 text-secondary border border-secondary rounded-md p-2 w-full">
+			<div className="flex justify-between items-center">
+				<select
+					className="bg-background-2 text-secondary border border-secondary rounded-md p-2 w-full"
+					value={orderBy}
+					onChange={handleOrderByChange}
+				>
 					<option value="">Sort By</option>
 					<option value="name">Name</option>
-					<option value="date">Date</option>
-					<option value="size">Size</option>
+					<option value="id">ID</option>
+					<option value="attack">Attack</option>
+					<option value="defense">Defense</option>
 				</select>
 
 				<div className="flex">

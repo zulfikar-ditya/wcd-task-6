@@ -2,8 +2,31 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../redux/pokemonSlice";
+import { RootState } from "../redux/store";
+import { useState } from "react";
 
 export default function Navbar() {
+	const [showSearch, setShowSearch] = useState(false);
+	const dispatch = useDispatch();
+	const { searchTerm } = useSelector((state: RootState) => state.pokemon);
+
+	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		dispatch(setSearchTerm(e.target.value));
+	};
+
+	const toggleSearch = () => {
+		setShowSearch(!showSearch);
+		// Focus the input when it becomes visible
+		if (!showSearch) {
+			setTimeout(() => {
+				const searchInput = document.getElementById("searchInput");
+				if (searchInput) searchInput.focus();
+			}, 100);
+		}
+	};
+
 	return (
 		<nav className="flex items-center justify-between p-4 text-white border-b border-gray-200">
 			<div className="">
@@ -18,26 +41,17 @@ export default function Navbar() {
 				</Link>
 			</div>
 			<div className="flex items-center relative">
-				<input
-					id="searchInput"
-					type="text"
-					placeholder="Search..."
-					className="mt-1 px-3 py-1 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white transition duration-200 ease-in-out"
-					style={{ display: "none" }}
-				/>
-				<button
-					onClick={() => {
-						const searchInput = document.getElementById("searchInput");
-						if (searchInput) {
-							searchInput.style.display =
-								searchInput.style.display === "none" ? "block" : "none";
-							if (searchInput.style.display === "block") {
-								searchInput.focus();
-							}
-						}
-					}}
-					className="p-2"
-				>
+				{showSearch ? (
+					<input
+						id="searchInput"
+						type="text"
+						placeholder="Search Pokemon..."
+						value={searchTerm}
+						onChange={handleSearchChange}
+						className="mt-1 px-3 py-1 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white transition-all duration-200 ease-in-out"
+					/>
+				) : null}
+				<button onClick={toggleSearch} className="p-2">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						className="h-5 w-5"
